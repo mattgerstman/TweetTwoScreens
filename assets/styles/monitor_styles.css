@@ -1,0 +1,523 @@
+
+
+body {
+	background: #a7c3fb url('/assets/images/clouds.png') repeat-x bottom fixed;
+	margin: 0;
+	font-size:12px;
+	font-family: Ariel;
+}
+
+h1 {
+	font-family:Ariel;
+}
+
+#container {
+	background: #FFF;
+	text-align:center;	
+	width:1000px;
+	float:left;
+	margin: 0 auto;
+}
+
+#deck {
+	background: url('/assets/images/deckplanks.png') repeat-x center top fixed;
+	height:222px;
+	width:100%;
+	margin:0 0px 0 0;
+	text-align: center;
+}
+
+#halfdeck {
+	background: url('/assets/images/deckplanks.png') repeat-x 0% -72px fixed;
+	height:150px;
+	width:100%;
+	margin:0 0px 0 0;
+	text-align: center;
+}
+
+
+#settings {
+	height:222px;
+	width:100%;
+	margin:0 0px 0 0;
+	text-align: center;
+	display:none;
+	font-family: Rockwell;
+	font: 2.5em;
+	background: #51a948;
+}
+
+.dropdowns {
+	position:relative;
+}
+
+
+.dropdowns div{
+	height:316px;
+	width:132px;
+	z-index:6;
+	float:left;
+}
+
+.dark_dropdown
+{
+	background: url('/assets/images/darkdropdown.png') repeat-x center bottom;
+	position:absolute;
+	left:7px;
+	color:#ffffff;
+	text-align: left;
+	display:none;
+}
+
+.light_dropdown{
+	background: url('/assets/images/lightdropdown.png') repeat-x center bottom;
+	position:absolute;
+	left:149px;
+	display:none;	
+	
+}
+
+.dropdown_list {
+	height:316px;
+	width:132px;
+	text-align:left;
+	color:#ffffff;
+
+	
+}
+
+.dropdown_list input{
+	text-align: center;
+	width:120px;
+	margin:8px 6px 0px 6px;
+	opacity: 0.5;
+}
+
+.dropdown_list ol{
+
+	
+}
+
+.dropdown_list ol li{
+	
+	word-wrap: break-word;
+	list-style:decimal;
+	display:list-item;
+	margin-left:-10px;
+	width:80px;
+	float:left;
+
+
+}
+
+.dropdown_list img{
+	margin-top:5px;
+	margin-left:4px;
+	width:10px;
+	float:left;
+	cursor:pointer;
+}
+#panels {
+	background: url('/assets/images/whitepanels.png') repeat-x center bottom;
+	width:100%;
+	height:70px;
+}
+
+#twitter_box {
+	margin:35px auto 0 auto;
+	
+}
+
+#settings_button {
+	background: url('/assets/images/settingsbackground.png') center no-repeat;
+	margin:0 auto;
+	text-align:center;
+	font-family:Rockwell;
+	font-size:3em;
+	text-transform: uppercase;	
+	color:#FFFFFF;
+	cursor:pointer;
+	width:400px;
+	}
+
+#settings_button:hover {
+	color:black;
+}
+
+div#settings_group{
+	width:990px;
+	margin:0 auto;
+	height:142px;
+	padding-top:10px;
+}
+
+div#settings_left{
+	height:100%;
+	float:left;
+	width:290px;
+}
+
+div#settings_center{
+	height:100%;
+	float:left;
+	width:410px;
+}
+
+div#settings_right {
+	height:100%;
+	float:left;
+	width:290px;
+}
+
+
+.settings_button{
+	width:140px;
+	background-color: #4279b2;
+	height:45px;
+	border:3px solid #2a53a7;
+	border-radius:3px;
+	margin-top:90px;
+	z-index:10;
+	position:relative;
+}
+
+#question{
+	width:50%;
+	height:80px;
+}
+
+div#title{
+	background: url('http://tweettwoscreens.com/assets/images/settingstitle.jpg');
+	height:46px;
+	width:408px;
+	color:#FFFFFF;
+	font-size: 2.5em;
+	margin:0 auto;
+	font-family:Rockwell;
+	display:table;
+}
+
+div#title span{
+	display:table-cell;
+	vertical-align: middle;
+}
+
+
+
+
+#tweet_deck {
+	width:850px;
+	margin: 0 auto;
+}
+
+
+#pending {
+	float:left;
+}
+
+#approved {
+	float:left;
+	margin: 0 0 0 50px;
+}
+
+#tweet_deck h2{
+	background: url('/assets/images/boxheader.png') center no-repeat;
+	font-size:2.5em;
+	font-family:Rockwell;
+	text-transform: uppercase;	
+	text-align:center;
+	width:267px;
+	margin: 20px 0px 0px 65px;
+	
+	
+}
+
+#tweet_deck h3{
+	background-color: #7899DB;
+	font-size:1.5em;
+	font-family:Rockwell;
+	color: #FFFFFF;
+	text-transform: uppercase;	
+	text-align:center;
+	line-height: 47px;
+	height:47px;
+	width:387px;
+	border:5px solid #3e6dcc;
+	border-radius:3px;
+	border-bottom:none;
+	position:relative;
+	margin:0;
+	z-index:5;
+	
+}
+
+.box_left {
+	background-color: rgba(194, 213, 252, 0.4);
+	height:60%;
+	width:387px;
+	border:5px solid #3e6dcc;
+	border-radius:3px;
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+	border-top:none;
+	margin: -5px 0 0 0;
+	position:relative;
+	float:left;
+	margin-bottom:80px;
+	overflow:hidden;
+
+}
+
+
+.selected {
+	color:#010500;
+}
+.unselected {
+	cursor:pointer;
+}
+
+#clear_pending
+{
+	float:right;
+	height:23px;
+	cursor:pointer;
+	margin-left:-47px;
+}
+
+#approve_pending
+{
+	float:right;
+	height:23px;
+	cursor:pointer;
+	margin-top:23px;
+	margin-left:-47px;
+}
+
+#left_scroll {
+	background-color: #7899DB;
+	width:23px;
+	height:90%;
+	position:relative;
+	float:left;
+	left:-28px;
+	border:5px solid #3e6dcc;
+	border-radius:3px;
+	border-right:none;
+}
+
+.box_right {
+	background-color: rgba(194, 213, 252, 0.4);
+	height:60%;
+	width:387px;
+	border:5px solid #3e6dcc;
+	border-radius:3px;
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+	border-top:none;
+	margin: -5px 0 0 0;
+	position:relative;
+	overflow:hidden;
+
+}
+
+
+
+#right_scroll {
+	background-color: #7899DB;
+	width:23px;
+	height:90%;
+	position:relative;
+	left:387px;
+	
+	border:5px solid #3e6dcc;
+	border-radius:3px;
+	border-left:none;
+}
+
+#pending_tweets
+{
+	float:left;
+	position:absolute;
+	height:100%;
+	top:10px;
+	overflow:hidden;	
+}
+
+
+
+.mCSB_scrollTools
+{
+	z-index:20;
+}
+
+#approved_tweets
+{
+	float:left;
+	position:absolute;
+	height:100%;
+	overflow:hidden;
+	top:10px;
+	
+}
+
+#approved_tweets .approve{
+	display:none;
+}
+
+#center_inputs{
+	margin-top:10px;
+}
+
+#booleans {
+	width:49%;
+	float:left;
+	
+}
+
+.boolean {
+	text-align:left;
+	width:139px;
+	height:19px;
+	display:table;
+}
+
+.boolean input[type="checkbox"] {
+	width:19px;
+    height:19px;
+    background:#FFF;
+   	display:table-cell;
+	vertical-align: middle;
+}
+
+.boolean label {
+	display:table-cell;
+	vertical-align: middle;
+	text-align: left;
+	width:120px;
+}
+
+
+
+#question {
+	width:90%;
+	margin-left:5%;
+	padding: 5px;
+	resize:none;
+	text-align: left;
+	float:left;
+	
+}
+
+.tweet {
+	float:left;
+	position:relative;
+	background-color:#FFFFFF;
+	border: 1px solid #3e6dcc;
+	height:77px;
+	width:364px;
+	margin:10px 0 0 11px;
+	
+}
+
+.with_img {
+	height:300px;
+
+}
+
+
+
+.tweet img {
+	position:relative;
+	height:63px;
+	width:63px;
+}
+
+.imgHover {
+	height:63px;
+	width:63px;
+    float:left;	
+    display: inline;
+    position: relative;
+	margin:8px 7px 0px 7px;
+}
+
+.imgHover .user_img_hover {
+    display: none;
+    position: absolute;
+    float:left;    
+    right:0;
+    z-index: 2;
+    cursor:pointer;
+}
+
+.tweet p{
+	float:left;
+	position:relative;
+	margin:1% 0 5% 0;
+	vertical-align: middle;	
+	height:77px;
+	width:245px;
+}
+
+
+.tweet .delete {
+	position:relative;
+	float:left;
+	top:0;
+	width:36px;
+	height:36px;
+	margin:-1px 0px 0px 6px;
+	cursor: pointer;
+}
+
+
+.tweet .approve {
+	position:relative;
+	float:left;
+	top:0;
+	width:36px;
+	height:36px;
+	margin:7px 0px 0px 6px;
+	cursor:pointer;
+	
+}
+
+.tweeted_img img {
+	height:200px;
+	max-width: 300px;
+	width:auto;
+	position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+	border: 3px solid #3e6dcc;
+}
+
+
+.deleteButton {
+	width:12px;
+	position: relative;
+	cursor: pointer;
+}
+
+
+
+.words {
+	margin-top:20px;
+}
+
+.words span {
+	width:300px;
+	display:inline-block;
+	font-size:2em;
+	position:relative;
+
+}
+
+.newStuff {
+	width:1000px;
+	text-align:center;
+	margin-bottom:20px;	
+
+}
