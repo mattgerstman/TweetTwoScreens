@@ -1,12 +1,9 @@
-RewriteEngine On
-RewriteBase /
+RewriteEngine on
+RewriteCond $1 !^(assets|robots\.txt)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /index.php?/$1 [L]
+RewriteRule ^(.*)$ index.php/$1 [L]  
 
-Header set Access-Control-Allow-Origin *
-Header always set Access-Control-Allow-Methods "POST, GET, OPTIONS, DELETE, PUT"
-Header always set Access-Control-Allow-Headers "*"
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ index.php [QSA,L]
+<Files "index.php">
+AcceptPathInfo On
+</Files>  

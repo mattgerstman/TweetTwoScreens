@@ -1,10 +1,10 @@
 jQuery.fn.extend({
 
 	approve: function() {
-	
+
 	if ($("#pending_tweets .tweet").size() != 0)
 	{
-		var tweet_id = $(this).attr('key');	
+		var tweet_id = $(this).attr('key');
 		$.post("monitor/approveTweet", {"tweet_id": tweet_id});
 
 
@@ -14,30 +14,30 @@ jQuery.fn.extend({
 
 		tweet.fadeTo(500, 0.00, function(){
 			$(this).slideUp(250, function(){
-				$(this).remove();		
+				$(this).remove();
 			});
 		});
-		
+
 		setTimeout(function(){
-			tweetClone.hide().appendTo('#approved_tweets').fadeIn(500);				
+			tweetClone.hide().appendTo('#approved_tweets').fadeIn(500);
 		}, 500);
 	}
 
-		
+
 	if (($("#pending_tweets .tweet").size() < 10) && approve)
 	{
 		console.log($("#pending_tweets .tweet").size());
 		getNewTweets();
 	}
-		
+
 	return $(this);
 	},
-	
+
 	display: function() {
-	
+
 	if ($("#approved_tweets .tweet").size() != 0)
 	{
-		var tweet_id = $(this).attr('key');	
+		var tweet_id = $(this).attr('key');
 		$.post("monitor/pendTweet", {"tweet_id": tweet_id});
 
 
@@ -47,36 +47,36 @@ jQuery.fn.extend({
 
 		tweet.fadeTo(500, 0.00, function(){
 			$(this).slideUp(250, function(){
-				$(this).remove();		
+				$(this).remove();
 			});
 		});
-	}	
-	
+	}
+
 	if (($("#pending_tweets .tweet").size() < 10) && approve)
 	{
 		getNewTweets();
 	}
-	
+
 	return $(this);
 	}
-		
+
 	});
-	
+
 function getNumTweets()
 {
 	console.log("Pending: " + $("#pending_tweets .tweet").size());
-	console.log("Approved: " + $("#approved_tweets .tweet").size());	
+	console.log("Approved: " + $("#approved_tweets .tweet").size());
 }
-	
+
 var newTweet = function(userimage, text, id, username, user_id, img)
 {
 	var returnval;
 	if (img != null)
-		returnval = '<div class="tweet with_img" key="'+id+'"><div class="imgHover"><img class="user_img"  user="'+user_id+'" src="'+userimage+'" /><img class="user_img_hover" src="http://tweettwoscreens.com/assets/images/red_x.png" /></div><p><b>'+username+'</b><br />'+text+'</p><img class="delete" key="'+id+'" src="http://tweettwoscreens.com/assets/images/red_x.png" /><img class="approve" key="'+id+'"" src="http://tweettwoscreens.com/assets/images/approve.png" /><div class="tweeted_img"><img src="' + img + '"></div></div>';
+    		returnval = '<div class="tweet with_img" key="'+id+'"><div class="imgHover"><img class="user_img"  user="'+user_id+'" src="'+userimage+'" /><img class="user_img_hover" src="assets/images/red_x.png" /></div><p><b>'+username+'</b><br />'+text+'</p><img class="delete" key="'+id+'" src="assets/images/red_x.png" /><img class="approve" key="'+id+'"" src="assets/images/approve.png" /><div class="tweeted_img"><img src="' + img + '"></div></div>';
 
-	else 
-		returnval = '<div class="tweet" key="'+id+'"><div class="imgHover"><img class="user_img"  user="'+user_id+'" src="'+userimage+'" /><img class="user_img_hover" src="http://tweettwoscreens.com/assets/images/red_x.png" /></div><p><b>'+username+'</b><br />'+text+'</p><img class="delete" key="'+id+'" src="http://tweettwoscreens.com/assets/images/red_x.png" /><img class="approve" key="'+id+'"" src="http://tweettwoscreens.com/assets/images/approve.png" /></div>';
-			
+	else
+		returnval = '<div class="tweet" key="'+id+'"><div class="imgHover"><img class="user_img"  user="'+user_id+'" src="'+userimage+'" /><img class="user_img_hover" src="assets/images/red_x.png" /></div><p><b>'+username+'</b><br />'+text+'</p><img class="delete" key="'+id+'" src="assets/images/red_x.png" /><img class="approve" key="'+id+'"" src="assets/images/approve.png" /></div>';
+
 
 	return returnval;
 }
@@ -90,8 +90,8 @@ function getNewTweets() {
 			$.getJSON("monitor/getNewTweets", function(tweet){
 
 				$.each(tweet, function(data){
-				$("#pending_tweets").append(newTweet(tweet[data]['user_img'], tweet[data]['message'], tweet[data]['id'], tweet[data]['username'], tweet[data]['user_id'], tweet[data]['img']));	
-	
+				$("#pending_tweets").append(newTweet(tweet[data]['user_img'], tweet[data]['message'], tweet[data]['id'], tweet[data]['username'], tweet[data]['user_id'], tweet[data]['img']));
+
 				});
 
 			});
@@ -103,10 +103,10 @@ function getNewTweets() {
 	}
 
 }
-	
+
 
 $(document).ready(function(){
-	
+
 	var autoApprove = setInterval(function(){
 		$("#pending_tweets .tweet:first img.approve").approve();
 	}, 5000);
@@ -118,39 +118,39 @@ $(document).ready(function(){
 	setInterval(function(){
 		getNewTweets();
 	}, 300000);
-	
+
 
 	getNewTweets();
 
     $("#tweet_deck").on('mouseenter', ".imgHover",
-        
+
         function() {
             $(this).children("img").fadeTo(200, 1).end().children(".user_img_hover").show();
         });
-        
+
     $("#tweet_deck").on('mouseleave', ".imgHover",
-        
+
     	function() {
             $(this).children("img").fadeTo(200, 1).end().children(".user_img_hover").hide();
 
-        });     
-        
-            
+        });
+
+
     $(".imgHover").live('click', function(){
     	var id = $(this).find('.user_img').attr('user');
-			   	
+
 			   	$(this).parent(".tweet").fadeTo(500, 0.00, function(){
 				   	$(this).slideUp(250, function(){
-					   	$(this).remove();		
+					   	$(this).remove();
 					   	});
 				});
-    	
+
 	   $.post('monitor/blacklistUserId', {'user_id':id}, function(data){
 		   	var parsedData = $.parseJSON(data);
-		   	$('#blacklist_user_dropdown').find("ol").append('<li>'+parsedData['username']+'</li><img class="dropdown_delete" type="blacklist" src="http://tweettwoscreens.com/assets/images/dropdown_x.png" />');
+		   	$('#blacklist_user_dropdown').find("ol").append('<li>'+parsedData['username']+'</li><img class="dropdown_delete" type="blacklist" src="assets/images/dropdown_x.png" />');
 	   });
-	   
-	   
+
+
 	   if ($("#pending_tweets .user_img").size() < 100)
 	   {
 		   $("#pending_tweets .user_img").each(function(index, tweet){
@@ -158,12 +158,12 @@ $(document).ready(function(){
 		   	{
 			   	$(tweet).parent(".imgHover").parent(".tweet").fadeTo(500, 0.00, function(){
 				   	$(this).slideUp(250, function(){
-					   	$(this).remove();		
+					   	$(this).remove();
 					   	});
 				});
 		   	}
-			   	
-			   	
+
+
 	   	});
 	   }
 	   else
@@ -197,26 +197,26 @@ $(document).ready(function(){
 		var word = li.text().trim();
 		li.fadeOut(500);
 		$(this).fadeOut(500);
-		
-		
+
+
 		var type = $(this).attr('type');
 		$.post('monitor/remove'+type, {'word' : word});
 	});
-	
+
 	$(".dropdown_list input").keypress(function (e) {
 		if (e.which == 13) {
 			var type = $(this).attr('name');
 			var word = $(this).val();
 			$.post('monitor/add'+type, {'word': word});
 			$(this).val('');
-			$(this).next("ol").append('<li>'+word+'</li><img class="dropdown_delete" type="blacklist" src="http://tweettwoscreens.com/assets/images/dropdown_x.png" />');
+			$(this).next("ol").append('<li>'+word+'</li><img class="dropdown_delete" type="blacklist" src="assets/images/dropdown_x.png" />');
 
 		}
 	});
-	
+
 
 	$(".settings_button").click(function(){
-		var id = $(this).attr('id')		
+		var id = $(this).attr('id')
 		var dropdown = $("#"+id+"_dropdown").slideToggle();
 	});
 
@@ -239,7 +239,7 @@ $(document).ready(function(){
 
 			getNewTweets();
 		}
-		
+
 	});
 
 
@@ -255,16 +255,16 @@ $(document).ready(function(){
 			newHeight = $("#pending_tweets .tweet:nth-child("+i+")").height();
 			cleared += newHeight
 		}
-		
+
 	});
 
 
 	$(".approve").live('click', function(){
 		$(this).approve();
 	} );
-	
+
 	$(".delete").live('click', function(){
-	var tweet_id = $(this).attr('key');	
+	var tweet_id = $(this).attr('key');
 	$.post("monitor/deleteTweet", {"tweet_id": tweet_id});
 
 
@@ -274,18 +274,18 @@ $(document).ready(function(){
 
 	tweet.fadeTo(500, 0.00, function(){
 		$(this).slideUp(250, function(){
-			$(this).remove();		
+			$(this).remove();
 		});
 	});
-		
+
 
 	});
-	
+
 	$("#settings_button").live('click', function(){
-		$("#deck").slideToggle('slow');	
+		$("#deck").slideToggle('slow');
 		$("#settings").slideToggle('slow');
 	});
-	
+
 	$("span#approve_off.unselected").live('click', function(){
 		clearInterval(autoApprove);
 		$("span#approve_off").removeClass("unselected");
@@ -294,51 +294,51 @@ $(document).ready(function(){
 		$("span#approve_on").removeClass("selected");
 		$.post("monitor/updateSetting", {'column' : 'approve', 'value' : 0});
 	});
-	
-		
+
+
 	$("span#approve_on.unselected").live('click', function(){
 		clearInterval(autoApprove);
 		$("span#approve_on").removeClass("unselected");
 		$("span#approve_on").addClass("selected");
 		$("span#approve_off").addClass("unselected");
 		$("span#approve_off").removeClass("selected");
-		
+
 		autoApprove = setInterval(function(){
 		$("#pending_tweets .tweet:first img.approve").approve();
 		}, 5000);
 		$.post("monitor/updateSetting", {'column' : 'approve', 'value' : 1});
 	});
-	
+
 	$("span#display_off.unselected").live('click', function(){
 		clearInterval(autoDisplay);
 		$("span#display_off").removeClass("unselected");
 		$("span#display_off").addClass("selected");
 		$("span#display_on").addClass("unselected");
 		$("span#display_on").removeClass("selected");
-		$.post("monitor/updateSetting", {'column' : 'display', 'value' : 0});		
+		$.post("monitor/updateSetting", {'column' : 'display', 'value' : 0});
 	});
-	
-		
+
+
 	$("span#display_on.unselected").live('click', function(){
 		clearInterval(autoDisplay);
 		$("span#display_on").removeClass("unselected");
 		$("span#display_on").addClass("selected");
 		$("span#display_off").addClass("unselected");
 		$("span#display_off").removeClass("selected");
-		
+
 		autoDisplay = setInterval(function(){
 		$("#approved_tweets .tweet:first img.approve").display();
 		}, 10000);
-		$.post("monitor/updateSetting", {'column' : 'display', 'value' : 1});		
+		$.post("monitor/updateSetting", {'column' : 'display', 'value' : 1});
 	});
 
-	
+
 
 	if (approve == false)
 		$('span#approve_off.unselected').click();
 
-	if (display == false)		
-		$('span#display_off.unselected').click();		
-	
+	if (display == false)
+		$('span#display_off.unselected').click();
+
 
 });

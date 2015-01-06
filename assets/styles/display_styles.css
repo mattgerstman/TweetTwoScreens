@@ -1,5 +1,5 @@
 @font-face {
-	src: url('/assets/fonts/MuseoSansRounded-100.otf');
+	src: url('/TweetTwoScreens/assets/fonts/MuseoSansRounded-100.otf');
 	font-family: Museo;
 }
 
@@ -30,7 +30,7 @@ body {
 
 	text-align: center;
 	overflow:hidden;
-	font-family: Museo;	
+	font-family: Museo;
 }
 
 h1 {
@@ -72,7 +72,7 @@ h1 {
 	bottom:0;
 	left:10%;
 	font-size:2.5em;
-	
+
 }
 
 #fullscreen {
@@ -102,7 +102,7 @@ h1 {
 
 #tweetImg {
 	width:100%;
-	
+
 }
 
 #tweetImg img{
@@ -110,5 +110,5 @@ h1 {
 	max-width:75%;
 	max-height: 60%;
 	margin-top:1%;
-	border:5px solid white;	
+	border:5px solid white;
 }
