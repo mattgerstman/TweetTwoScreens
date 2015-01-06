@@ -15,6 +15,9 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+create database tweettwoscreens;
+use tweettwoscreens;
+
 --
 -- Table structure for table `blacklist`
 --
@@ -42,17 +45,17 @@ UNLOCK TABLES;
 
 DELIMITER ;;
 /*!50003 SET SESSION SQL_MODE="" */;;
-/*!50003 CREATE */ /*!50017 DEFINER=`dmapplications`@`208.113.128.0/255.255.128.0` */ /*!50003 TRIGGER `blacklist_insert` BEFORE INSERT ON `blacklist` FOR EACH ROW set NEW.username = lower(NEW.username) */;;
+/*!50003 CREATE */ /*!50003 TRIGGER `blacklist_insert` BEFORE INSERT ON `blacklist` FOR EACH ROW set NEW.username = lower(NEW.username) */;;
 
 /*!50003 SET SESSION SQL_MODE="" */;;
-/*!50003 CREATE */ /*!50017 DEFINER=`dmapplications`@`208.113.128.0/255.255.128.0` */ /*!50003 TRIGGER `blacklist_tweets` AFTER INSERT ON `blacklist` FOR EACH ROW BEGIN
+/*!50003 CREATE */ /*!50003 TRIGGER `blacklist_tweets` AFTER INSERT ON `blacklist` FOR EACH ROW BEGIN
       DECLARE theid INT;
       SET theid = (SELECT `id` FROM users where users.username = NEW.username LIMIT 1);
       DELETE FROM tweets where user_id = theid;
     END */;;
 
 /*!50003 SET SESSION SQL_MODE="" */;;
-/*!50003 CREATE */ /*!50017 DEFINER=`dmapplications`@`208.113.128.0/255.255.128.0` */ /*!50003 TRIGGER `blacklist_update` BEFORE UPDATE ON `blacklist` FOR EACH ROW set NEW.username = lower(NEW.username) */;;
+/*!50003 CREATE */  /*!50003 TRIGGER `blacklist_update` BEFORE UPDATE ON `blacklist` FOR EACH ROW set NEW.username = lower(NEW.username) */;;
 
 DELIMITER ;
 /*!50003 SET SESSION SQL_MODE=@SAVE_SQL_MODE*/;
@@ -109,10 +112,10 @@ UNLOCK TABLES;
 
 DELIMITER ;;
 /*!50003 SET SESSION SQL_MODE="" */;;
-/*!50003 CREATE */ /*!50017 DEFINER=`dmapplications`@`208.113.128.0/255.255.128.0` */ /*!50003 TRIGGER `profanity_insert` BEFORE INSERT ON `profanity` FOR EACH ROW set NEW.word = lower(NEW.word) */;;
+/*!50003 CREATE */ /*!50003 TRIGGER `profanity_insert` BEFORE INSERT ON `profanity` FOR EACH ROW set NEW.word = lower(NEW.word) */;;
 
 /*!50003 SET SESSION SQL_MODE="" */;;
-/*!50003 CREATE */ /*!50017 DEFINER=`dmapplications`@`208.113.128.0/255.255.128.0` */ /*!50003 TRIGGER `profanity_update` BEFORE UPDATE ON `profanity` FOR EACH ROW set NEW.word = lower(NEW.word) */;;
+/*!50003 CREATE */ /*!50003 TRIGGER `profanity_update` BEFORE UPDATE ON `profanity` FOR EACH ROW set NEW.word = lower(NEW.word) */;;
 
 DELIMITER ;
 /*!50003 SET SESSION SQL_MODE=@SAVE_SQL_MODE*/;
@@ -181,7 +184,7 @@ UNLOCK TABLES;
 
 DELIMITER ;;
 /*!50003 SET SESSION SQL_MODE="" */;;
-/*!50003 CREATE */ /*!50017 DEFINER=`dmapplications`@`208.113.128.0/255.255.128.0` */ /*!50003 TRIGGER `update_retweets` BEFORE UPDATE ON `tweets` FOR EACH ROW BEGIN
+/*!50003 CREATE */ /*!50003 TRIGGER `update_retweets` BEFORE UPDATE ON `tweets` FOR EACH ROW BEGIN
     IF (NEW.retweets < OLD.retweets) THEN
     SET NEW.retweets = OLD.retweets;
     END IF;
@@ -220,10 +223,10 @@ UNLOCK TABLES;
 
 DELIMITER ;;
 /*!50003 SET SESSION SQL_MODE="" */;;
-/*!50003 CREATE */ /*!50017 DEFINER=`dmapplications`@`208.113.128.0/255.255.128.0` */ /*!50003 TRIGGER `users_insert` BEFORE INSERT ON `users` FOR EACH ROW set NEW.username = lower(NEW.username) */;;
+/*!50003 CREATE */ /*!50003 TRIGGER `users_insert` BEFORE INSERT ON `users` FOR EACH ROW set NEW.username = lower(NEW.username) */;;
 
 /*!50003 SET SESSION SQL_MODE="" */;;
-/*!50003 CREATE */ /*!50017 DEFINER=`dmapplications`@`208.113.128.0/255.255.128.0` */ /*!50003 TRIGGER `users_update` BEFORE UPDATE ON `users` FOR EACH ROW set NEW.username = lower(NEW.username) */;;
+/*!50003 CREATE */ /*!50003 TRIGGER `users_update` BEFORE UPDATE ON `users` FOR EACH ROW set NEW.username = lower(NEW.username) */;;
 
 DELIMITER ;
 /*!50003 SET SESSION SQL_MODE=@SAVE_SQL_MODE*/;
@@ -255,10 +258,10 @@ UNLOCK TABLES;
 
 DELIMITER ;;
 /*!50003 SET SESSION SQL_MODE="" */;;
-/*!50003 CREATE */ /*!50017 DEFINER=`dmapplications`@`208.113.128.0/255.255.128.0` */ /*!50003 TRIGGER `whitelist_insert` BEFORE INSERT ON `whitelist` FOR EACH ROW set NEW.username = lower(NEW.username) */;;
+/*!50003 CREATE */ /*!50003 TRIGGER `whitelist_insert` BEFORE INSERT ON `whitelist` FOR EACH ROW set NEW.username = lower(NEW.username) */;;
 
 /*!50003 SET SESSION SQL_MODE="" */;;
-/*!50003 CREATE */ /*!50017 DEFINER=`dmapplications`@`208.113.128.0/255.255.128.0` */ /*!50003 TRIGGER `whitelist_update` BEFORE UPDATE ON `whitelist` FOR EACH ROW set NEW.username = lower(NEW.username) */;;
+/*!50003 CREATE */ /*!50003 TRIGGER `whitelist_update` BEFORE UPDATE ON `whitelist` FOR EACH ROW set NEW.username = lower(NEW.username) */;;
 
 DELIMITER ;
 /*!50003 SET SESSION SQL_MODE=@SAVE_SQL_MODE*/;
