@@ -4,7 +4,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="https://raw.github.com/kayahr/jquery-fullscreen-plugin/master/jquery.fullscreen-min.js" ></script>
  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
- 
+
 <script src='<?php echo base_url('assets/js/textillate/jquery.textillate.js');?>'></script>
 <script src='<?php echo base_url('assets/js/textillate/assets/jquery.lettering.js');?>'></script>
 <script src='<?php echo base_url('assets/js/FitText.js/jquery.fittext.js');?>'></script>

@@ -1,26 +1,24 @@
-
-
 body {
-	background: #a7c3fb url('/assets/images/clouds.png') repeat-x bottom fixed;
+	background: #a7c3fb url('/TweetTwoScreens/assets/images/clouds.png') repeat-x bottom fixed;
 	margin: 0;
 	font-size:12px;
-	font-family: Ariel;
+	font-family: Helvetica, sans-serif;
 }
 
 h1 {
-	font-family:Ariel;
+	font-family:Helvetica, sans-serif;
 }
 
 #container {
 	background: #FFF;
-	text-align:center;	
+	text-align:center;
 	width:1000px;
 	float:left;
 	margin: 0 auto;
 }
 
 #deck {
-	background: url('/assets/images/deckplanks.png') repeat-x center top fixed;
+	background: url('/TweetTwoScreens/assets/images/deckplanks.png') repeat-x center top fixed;
 	height:222px;
 	width:100%;
 	margin:0 0px 0 0;
@@ -28,7 +26,7 @@ h1 {
 }
 
 #halfdeck {
-	background: url('/assets/images/deckplanks.png') repeat-x 0% -72px fixed;
+	background: url('/TweetTwoScreens/assets/images/deckplanks.png') repeat-x 0% -72px fixed;
 	height:150px;
 	width:100%;
 	margin:0 0px 0 0;
@@ -42,7 +40,7 @@ h1 {
 	margin:0 0px 0 0;
 	text-align: center;
 	display:none;
-	font-family: Rockwell;
+	font-family: Helvetica, sans-serif;
 	font: 2.5em;
 	background: #51a948;
 }
@@ -61,7 +59,7 @@ h1 {
 
 .dark_dropdown
 {
-	background: url('/assets/images/darkdropdown.png') repeat-x center bottom;
+	background: url('/TweetTwoScreens/assets/images/darkdropdown.png') repeat-x center bottom;
 	position:absolute;
 	left:7px;
 	color:#ffffff;
@@ -70,11 +68,11 @@ h1 {
 }
 
 .light_dropdown{
-	background: url('/assets/images/lightdropdown.png') repeat-x center bottom;
+	background: url('/TweetTwoScreens/assets/images/lightdropdown.png') repeat-x center bottom;
 	position:absolute;
 	left:149px;
-	display:none;	
-	
+	display:none;
+
 }
 
 .dropdown_list {
@@ -83,7 +81,7 @@ h1 {
 	text-align:left;
 	color:#ffffff;
 
-	
+
 }
 
 .dropdown_list input{
@@ -95,11 +93,11 @@ h1 {
 
 .dropdown_list ol{
 
-	
+
 }
 
 .dropdown_list ol li{
-	
+
 	word-wrap: break-word;
 	list-style:decimal;
 	display:list-item;
@@ -118,23 +116,23 @@ h1 {
 	cursor:pointer;
 }
 #panels {
-	background: url('/assets/images/whitepanels.png') repeat-x center bottom;
+	background: url('/TweetTwoScreens/assets/images/whitepanels.png') repeat-x center bottom;
 	width:100%;
 	height:70px;
 }
 
 #twitter_box {
 	margin:35px auto 0 auto;
-	
+
 }
 
 #settings_button {
-	background: url('/assets/images/settingsbackground.png') center no-repeat;
+	background: url('/TweetTwoScreens/assets/images/settingsbackground.png') center no-repeat;
 	margin:0 auto;
 	text-align:center;
-	font-family:Rockwell;
+	font-family:Helvetica, sans-serif;
 	font-size:3em;
-	text-transform: uppercase;	
+	text-transform: uppercase;
 	color:#FFFFFF;
 	cursor:pointer;
 	width:400px;
@@ -187,13 +185,13 @@ div#settings_right {
 }
 
 div#title{
-	background: url('http://tweettwoscreens.com/assets/images/settingstitle.jpg');
+	background: url('/TweetTwoScreens/assets/images/settingstitle.jpg');
 	height:46px;
 	width:408px;
 	color:#FFFFFF;
 	font-size: 2.5em;
 	margin:0 auto;
-	font-family:Rockwell;
+	font-family:Helvetica, sans-serif;
 	display:table;
 }
 
@@ -221,23 +219,23 @@ div#title span{
 }
 
 #tweet_deck h2{
-	background: url('/assets/images/boxheader.png') center no-repeat;
+	background: url('/TweetTwoScreens/assets/images/boxheader.png') center no-repeat;
 	font-size:2.5em;
-	font-family:Rockwell;
-	text-transform: uppercase;	
+	font-family:Helvetica, sans-serif;
+	text-transform: uppercase;
 	text-align:center;
 	width:267px;
 	margin: 20px 0px 0px 65px;
-	
-	
+
+
 }
 
 #tweet_deck h3{
 	background-color: #7899DB;
 	font-size:1.5em;
-	font-family:Rockwell;
+	font-family:Helvetica, sans-serif;
 	color: #FFFFFF;
-	text-transform: uppercase;	
+	text-transform: uppercase;
 	text-align:center;
 	line-height: 47px;
 	height:47px;
@@ -248,7 +246,7 @@ div#title span{
 	position:relative;
 	margin:0;
 	z-index:5;
-	
+
 }
 
 .box_left {
@@ -328,7 +326,7 @@ div#title span{
 	height:90%;
 	position:relative;
 	left:387px;
-	
+
 	border:5px solid #3e6dcc;
 	border-radius:3px;
 	border-left:none;
@@ -340,7 +338,7 @@ div#title span{
 	position:absolute;
 	height:100%;
 	top:10px;
-	overflow:hidden;	
+	overflow:hidden;
 }
 
 
@@ -357,7 +355,7 @@ div#title span{
 	height:100%;
 	overflow:hidden;
 	top:10px;
-	
+
 }
 
 #approved_tweets .approve{
@@ -371,7 +369,7 @@ div#title span{
 #booleans {
 	width:49%;
 	float:left;
-	
+
 }
 
 .boolean {
@@ -405,7 +403,7 @@ div#title span{
 	resize:none;
 	text-align: left;
 	float:left;
-	
+
 }
 
 .tweet {
@@ -416,7 +414,7 @@ div#title span{
 	height:77px;
 	width:364px;
 	margin:10px 0 0 11px;
-	
+
 }
 
 .with_img {
@@ -435,7 +433,7 @@ div#title span{
 .imgHover {
 	height:63px;
 	width:63px;
-    float:left;	
+    float:left;
     display: inline;
     position: relative;
 	margin:8px 7px 0px 7px;
@@ -444,7 +442,7 @@ div#title span{
 .imgHover .user_img_hover {
     display: none;
     position: absolute;
-    float:left;    
+    float:left;
     right:0;
     z-index: 2;
     cursor:pointer;
@@ -454,7 +452,7 @@ div#title span{
 	float:left;
 	position:relative;
 	margin:1% 0 5% 0;
-	vertical-align: middle;	
+	vertical-align: middle;
 	height:77px;
 	width:245px;
 }
@@ -479,7 +477,7 @@ div#title span{
 	height:36px;
 	margin:7px 0px 0px 6px;
 	cursor:pointer;
-	
+
 }
 
 .tweeted_img img {
@@ -518,6 +516,6 @@ div#title span{
 .newStuff {
 	width:1000px;
 	text-align:center;
-	margin-bottom:20px;	
+	margin-bottom:20px;
 
 }
