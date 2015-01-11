@@ -39,7 +39,7 @@
 | path to your installation.
 |
 */
- $config['base_url']	= 'http://192.168.59.103/TweetTwoScreens';
+ $config['base_url']	= 'http://apps.mattgerstman.com/TweetTwoScreens/';
 
 /*
 |--------------------------------------------------------------------------
